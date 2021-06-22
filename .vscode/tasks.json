@@ -23,6 +23,32 @@
                 "isDefault": true
             },
             "detail": "компилятор: /usr/bin/clang++"
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: clang++ сборка gtest_example",
+            "command": "/usr/bin/clang++",
+            "args": [
+                "-std=c++0x",
+                "-g",
+                "${workspaceFolder}/gtest_example/*.cpp",
+                "-lgtest",
+                "-lgtest_main",
+                "-pthread",
+                "-o",
+                "sumProgram"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "компилятор: /usr/bin/clang++"
         }
     ]
 }
