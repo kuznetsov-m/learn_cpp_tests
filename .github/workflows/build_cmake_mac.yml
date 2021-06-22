@@ -1,0 +1,31 @@
+name: mac Building(CMake)
+
+# on: [push, pull_request]
+# or
+on:
+  push:
+    branches: [ master ]
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+  pull_request:
+    branches: [ master ]
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+      
+jobs:
+  linux-build:
+    name: ${{ matrix.config.os }}
+    runs-on: ${{ matrix.config.os }}
+    strategy:
+      #fail-fast: false
+      matrix:
+        #os: [ubuntu-20.04]
+        #or
+        config:
+        - {
+            name: "macOS Latest Clang", artifact: "macOS.7z",
+            os: macos-latest,
+            cc: "clang", cxx: "clang++"
+        }
